@@ -6,11 +6,13 @@ JJazzLab-X is a Midi-based framework dedicated to backing tracks generation.
 
 The ultimate objective is to develop a jam buddy able to quickly generate intelligent and interesting backing tracks: realistic and non-boring backing tracks which you can easily adjust to specific songs.
 
-![](.gitbook/assets/jjazzlabscreenshot.png)
-
 ## Architecture
 
 ![](.gitbook/assets/jjazzlab-x-architecture.jpg)
+
+{% hint style="info" %}
+JJazzLab-X has a very well-commented source code: don't hesitate to browse the [GitHub repository](https://github.com/jjazzboss/JJazzLab-X). 
+{% endhint %}
 
 ## Develop your own rhythm generation engine without hassle
 
