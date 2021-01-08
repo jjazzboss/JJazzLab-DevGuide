@@ -2,7 +2,11 @@
 
 * [JJazzLab-X](README.md)
 * [Building](building.md)
-* [Getting started](getting-started.md)
-* [Main modules](untitled.md)
-* [Data model](data-model.md)
+* [Add a rhythm engine](getting-started.md)
+* [Add new features](add-new-features.md)
+
+## API
+
+* [Main modules](api/untitled-1.md)
+* [Data model](api/data-model.md)
 

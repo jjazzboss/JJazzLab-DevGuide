@@ -12,7 +12,7 @@ The ultimate objective is to develop a jam buddy able to quickly generate intell
 
 ![](.gitbook/assets/jjazzlab-x-architecture.jpg)
 
-## Develop your own music generation engine without hassle
+## Develop your own rhythm generation engine without hassle
 
 Thanks to JJazzLab-X developers can save a huge amount of work by only focusing on their music generation engine. Out of the box, the JJazzLab-X framework provides all the infrastructure, all the “plumbing” that, before, every developer had to write themselves.
 
