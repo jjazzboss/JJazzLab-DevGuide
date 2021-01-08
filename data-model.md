@@ -1,16 +1,16 @@
 # Data model
 
-## `Song` object
+## `Song` 
 
 The [Song](https://github.com/jjazzboss/JJazzLab-X/blob/master/Song/src/org/jjazz/song/api/Song.java) object is the main data model. It is mainly composed of a [ChordLeadSheet](https://github.com/jjazzboss/JJazzLab-X/blob/master/ChordLeadSheet/src/org/jjazz/leadsheet/chordleadsheet/api/ChordLeadSheet.java) and a [SongStructure](https://github.com/jjazzboss/JJazzLab-X/blob/master/SongStructure/src/org/jjazz/songstructure/api/SongStructure.java).
 
-The `ChordLeadSheet` object is the model of the Chord Leadshet Editor. It holds the sections and the chord symbols.
+The `ChordLeadSheet` object is the model of the Chord leadsheet editor. It holds the sections and the chord symbols.
 
-The `SongStructure` object is the model of the Song Structure Editor. It holds the [SongParts](https://github.com/jjazzboss/JJazzLab-X/blob/master/SongStructure/src/org/jjazz/songstructure/api/SongPart.java), each one being linked to a parent section, and each one defining a set of `RhythmParameter` values.
+The `SongStructure` object is the model of the Song structure editor. It holds the [SongParts](https://github.com/jjazzboss/JJazzLab-X/blob/master/SongStructure/src/org/jjazz/songstructure/api/SongPart.java), each one being linked to a parent section, and each one defining a set of `RhythmParameter` values.
 
-Combining the `SongStructure` and the `ChordLeadSheet` will give you the "unrolled" chord leadsheet for which the backing track must be generated.
+Combining the `SongStructure` and the `ChordLeadSheet` will give you the "unrolled" chord lead sheet for which the backing track must be generated.
 
-## `MidiMix` object
+## `MidiMix` 
 
 The [MidiMix](https://github.com/jjazzboss/JJazzLab-X/blob/master/MidiMix/src/org/jjazz/midimix/MidiMix.java) stores the Midi configuration of a given `Song`. It is mainly used by the framework to control the Midi output device. Your `MusicGenerator` will use it only to retrieve the Midi channel associated to a `Rhythm` track \(`RhythmVoice`\).
 

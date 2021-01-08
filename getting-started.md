@@ -4,11 +4,11 @@ description: Make your own rhythm generation engine
 
 # Getting started
 
-![](.gitbook/assets/rhythmpluginsarchitecture.png)
+If you want to develop a **rhythm engine**, JJazzLab-X will make it easier than you think.
 
 ## Architecture
 
-So you'd like to be able to generate your own backings tracks ? You need to develop a **rhythm engine**, and JJazzLab-X will make it easier than you think.
+![](.gitbook/assets/rhythmpluginsarchitecture.png)
 
 The main APIs you'll be using are found in the `Rhythm` and `RhythmMusicGeneration` modules:
 
