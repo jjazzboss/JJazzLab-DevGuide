@@ -11,7 +11,7 @@ The ultimate objective is to develop a jam buddy able to quickly generate intell
 ![](.gitbook/assets/jjazzlab-x-architecture.jpg)
 
 {% hint style="info" %}
-JJazzLab-X has a rather well-commented source code: don't hesitate to browse the [GitHub repository](https://github.com/jjazzboss/JJazzLab-X) or the [javadoc API](https://www.jjazzlab.com/javadoc/index.html).
+JJazzLab-X has a rather well-commented source code: don't hesitate to browse the [GitHub repository](https://github.com/jjazzboss/JJazzLab-X) or the [Javadoc API](https://www.jjazzlab.com/javadoc/index.html).
 {% endhint %}
 
 ## Develop your own rhythm generation engine without hassle
