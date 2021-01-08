@@ -9,5 +9,5 @@
 
 * [Main modules](api/untitled-1.md)
 * [Data model](api/data-model.md)
-* [Complete javadoc](https://www.jjazzlab.com/javadoc/index.html)
+* [Javadoc API](https://www.jjazzlab.com/javadoc/index.html)
 
