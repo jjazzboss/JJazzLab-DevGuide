@@ -1,7 +1,5 @@
 # JJazzLab-X
 
-**Links**   [User Guide](https://jjazzlab.gitbook.io/user-guide)  -  [JJazzLab-X GitHub repository](https://github.com/jjazzboss/JJazzLab-X)  -  [www.jjazzlab.com](https://www.jjazzlab.com)
-
 JJazzLab-X is a Midi-based framework dedicated to backing tracks generation. 
 
 The ultimate objective is to develop a jam buddy able to quickly generate intelligent and interesting backing tracks: realistic and non-boring backing tracks which you can easily adjust to specific songs.
