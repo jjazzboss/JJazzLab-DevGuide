@@ -48,7 +48,7 @@ The `RhythmProvider` implementation is responsible to provide:
 
 ### `Rhythm` 
 
-A `Rhythm` object describes... a rhythm !
+A `Rhythm` interface describes... a rhythm !
 
 * name, for example "samba-fast"
 * description
@@ -57,7 +57,9 @@ A `Rhythm` object describes... a rhythm !
 * feel : ternary/binary 
 * etc...
 
-It also defines the `RhythmVoices`, `RhythmParameters`, and a `MusicGenerator`.
+It also defines the `RhythmVoices`, `RhythmParameters`. 
+
+The Rhythm implementation must also implement  the `MusicGenerator` interface to be able to generate music.
 
 **Example**: See [RhythmStub.java](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmStubs/src/org/jjazz/rhythm/stubs/RhythmStub.java) for a very simple `Rhythm` implementation example.
 
@@ -77,9 +79,7 @@ There are ready-to-use classes to quickly define your `RhythmParameters` dependi
 
 ### `MusicGenerator` 
 
-The object that generates your rhythm music is a `MusicGenerator`. It has just a single method which takes the music generation context as a parameter, and returns the musical phrases \(one per track\) that make the backing track.
-
-There is no public method to directly retrieve the `MusicGenerator` instance from a `Rhythm`. Instead the `MusicGenerator` instance must be put in the _lookup_ of the Rhythm object. This allows for more flexibility than a fixed API: music generation capabilities of a `Rhythm` can change across versions and can be evaluated at runtime by the framework. The general Netbeans lookup mechanism used is described [here](http://wiki.netbeans.org/DevFaqLookup).
+This is an interface which indicates the capability to generate rhythm music. It has just a single method which takes the music generation context as a parameter, and returns the musical phrases \(one per track\) that make the backing track.
 
 When user presses the Play button for a given song, JJazzLab-X will:
 
