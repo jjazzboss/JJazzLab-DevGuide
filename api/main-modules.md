@@ -16,7 +16,7 @@ JJazzLab-X relies on the [Netbeans Platform](https://netbeans.org/features/platf
 
 **MixConsole** The graphical editor for a MidiMix object.
 
-**MusicControl** Control the music playback \(start, pause, etc.\).
+**MusicControl** Control the music playback \(start, pause, etc.\), which includes the launch of the backing track generation process.
 
 **Rhythm** The model for a rhythm \(=a style\). Also define the RhythmProvider interface which should be implemented by third-party rhythm generation engines.
 
