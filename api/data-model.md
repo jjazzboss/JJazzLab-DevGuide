@@ -27,5 +27,6 @@ Supporting classes useful for your `MusicGenerator`:
 * [Phrase](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/Phrase.java) and [NoteEvent](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/NoteEvent.java): the `MusicGenerator` needs to create a `Phrase` for each rhythm track.
 * [ContextChordSequence](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/ContextChordSequence.java): a helper class to get the "unrolled" chord leadsheet descrive above.
 * [Grid](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/Grid.java): music phrase manipulation methods
+* [Phrases](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/Phrases.java): music phrase manipulation methods, including methods to adapt a music source phrase \(e.g. a bass pattern for C7M\) into a different chord \(e.g. Ab-6\)
 * etc.
 
