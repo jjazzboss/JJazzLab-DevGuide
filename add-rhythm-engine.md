@@ -80,8 +80,7 @@ This is an interface which indicates the capability to generate rhythm music. It
 When user presses the Play button for a given song, JJazzLab-X will:
 
 * prepare the [MusicGenerationContext](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/MusicGenerationContext.java) \(e.g. mainly a [Song](https://github.com/jjazzboss/JJazzLab-X/blob/master/Song/src/org/jjazz/song/api/Song.java) object which contains a [ChordLeadSheet](https://github.com/jjazzboss/JJazzLab-X/blob/master/ChordLeadSheet/src/org/jjazz/leadsheet/chordleadsheet/api/ChordLeadSheet.java) and a [SongStructure](https://github.com/jjazzboss/JJazzLab-X/blob/master/SongStructure/src/org/jjazz/songstructure/api/SongStructure.java)\)
-* retrieve the `MusicGenerator` implementation from the lookup of the selected `Rhythm`
-* pass it the context data and ask it to generate the backing track
+* If `Rhythm` implements the `MusicGenerator` interface, pass it the context data and ask it to generate the backing track
 * wait until the `MusicGenerator` has finished the music generation
 * convert the received music data into a Midi sequence
 * play the sequence.
