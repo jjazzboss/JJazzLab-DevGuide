@@ -86,7 +86,7 @@ Now you should have only one error in the file:
 
 ![](.gitbook/assets/2021-05-30-21_59_36-window.png)
 
-Netbeans uses annotations to facilitate action declarations: 
+Netbeans uses annotations to facilitate action declaration: 
 
 * In the **@ActionID** declaration, replace the **id** string by a string of your choice, e.g **org.myself.reharmonize**
 
@@ -95,9 +95,9 @@ The action displayName is **\#CTL\_TransposeDown**, and the leading \# means the
 1. Change all the **CTL\_TransposeDown** strings to **CTL\_Reharmonize** in **Reharmonize.java**
 2. Edit **Bundle.properties** and add a line with **CTL\_Reharmonize=Reharmonize chord progression**
 
-The **@ActionReference** puts a reference to this action in the Netbeans virtual file system in the **Actions/ChordSymbol** directory. When user shows the chord symbol popup menu, JJazzLab-X takes all actions found in this directory and create the related menu entries, using the **position** value to order them.
+The **@ActionReference** puts a reference to this action in the Netbeans virtual file system, in the **Actions/ChordSymbol** directory. When user shows the chord symbol popup menu, JJazzLab-X takes all action references found in this directory and create the related menu entries, using the **position** value to order them.
 
-1. In **@ActionReference c**hange position value to **415**, so our action will appear in the popup menu after the TransposeDown action.
+1. In **@ActionReference** change position value to **415**, so our action will appear in the popup menu after the TransposeDown action.
 
 Now the module should be compilable. Select the **Reharmonize** module then **Build** from the popup menu.
 
@@ -107,12 +107,14 @@ Run JJazzLab-X, then in a song select a chord symbol and show the popup menu: ou
 
 #### Action code
 
-The 2 most important methods here are:
+The 2 most important methods are:
 
 * **selectionChange**\(\), which is called each time selection has changed \(select/unselect bars, chord symbols, sections\) in the current chord lead sheet editor. This is used to enable/disable the action depending on the selection.
 * **actionPerformed\(\)**, which performs the action on the current selection.
 
 The automatic selection change mechanism is provided by the **CL\_ContextActionSupport** helper class.  This mechanism is based on the powerful **Netbeans global Lookup** mechanism, which is a out of scope of this simple tutorial -but you will easily find explanations on the web. 
+
+Below is a sketch of a possible Reharmonize action implementation.
 
 ```text
  @Override
