@@ -1,14 +1,14 @@
 # Getting started
 
+{% hint style="warning" %}
+You need to have previously built [JJazzLab-X from source code](build-from-source-code.md) using Netbeans IDE.
+{% endhint %}
+
 JJazzLab-X is based on the [Apache Netbeans Platform](https://netbeans.apache.org/kb/docs/platform.html) \(formerly Netbeans RCP for Rich Client Platform\). It provides a reliable and extensible architecture for desktop application which manages the application life cycle, the window system, extension points, options, actions, extension points, etc.
 
 Each distinct feature in a Netbeans Platform application can be provided by a distinct Netbeans module, which is comparable to a plugin. A Netbeans module is a group of Java classes that provides an application with a specific feature.Most of the directories you see in the [JJazzLab-X root directory on GitHub](https://github.com/jjazzboss/JJazzLab-X) are the JJazzLab-X modules.
 
 So unless you want to fix the JJazzLab-X code itself, you will probably start by creating your own Netbeans module. We'll show below how to plug your new feature in the application, e.g. how to make a new action appear in a give menu, or how to make your new rhythm engine appear in the rhythm selection dialog.
-
-{% hint style="warning" %}
-You need to have previously built [JJazzLab-X from source code](build-from-source-code.md) using Netbeans IDE.
-{% endhint %}
 
 ## Create your Netbeans module
 
@@ -48,9 +48,7 @@ As you see above, the Quantizer module has dependencies on 2 JJazzLab-X modules 
 
 The Quantizer module has only a single API package, which is made public to other modules.
 
-## Add code
-
-### Start from existing code
+## Create the action class
 
 We want to create a "Reharmonize" action in the chord symbol popup menu. The best way is to look for a similar action and copy the code. Actions classes are mainly found in the following modules:
 
@@ -78,9 +76,7 @@ Roll the mouse over the light bulb on the left margin, and click on the popup **
 
 Repeat the same operation until all dependencies are fixed. 
 
-### Update the code
-
-#### Action annotations
+## Action annotations
 
 Now you should have only one error in the file:
 
@@ -105,7 +101,7 @@ Run JJazzLab-X, then in a song select a chord symbol and show the popup menu: ou
 
 ![](.gitbook/assets/2021-05-30-22_37_52-window.png)
 
-#### Action code
+## Action code
 
 The 2 most important methods are:
 
@@ -116,7 +112,7 @@ The automatic selection change mechanism is provided by the **CL\_ContextActionS
 
 Below is a sketch of a possible Reharmonize action implementation.
 
-```text
+```java
  @Override
     public void actionPerformed(ActionEvent e)
     {
@@ -124,7 +120,7 @@ Below is a sketch of a possible Reharmonize action implementation.
         CL_SelectionUtilities selection = cap.getSelection();
 
 
-        // REHARMONIZE CODE HERE
+        // REHARMONIZE CODE 
                 
         // 1. Get current selected chord symbols : selection.getSelectedChordSymbols()
         // List is guaranteed to be non empty because of our selectionChange() implementation
