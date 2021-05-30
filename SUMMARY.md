@@ -2,7 +2,6 @@
 
 * [JJazzLab-X](README.md)
 * [Getting started](building.md)
-* [Getting started](getting-started.md)
 * [Add a rhythm engine](add-rhythm-engine.md)
 * [Add new features](add-new-features.md)
 
