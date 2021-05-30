@@ -4,7 +4,6 @@
 * [Build from source code](build-from-source-code.md)
 * [Getting started](building.md)
 * [Add a rhythm engine](add-rhythm-engine.md)
-* [Add new features](add-new-features.md)
 
 ## API
 
