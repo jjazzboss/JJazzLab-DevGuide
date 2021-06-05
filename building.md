@@ -140,7 +140,7 @@ Below is a sketch of a possible Reharmonize action implementation.
         List<CLI_ChordSymbol> newChordSymbols= getReharmonizedChordSymbols(selection.getSelectedChordSymbols());
 
 
-        if (newProgression != null)
+        if (newChordSymbols != null)
         {
 
             // Start an undoable action which will collect the individual undoable edits
