@@ -8,7 +8,7 @@ JJazzLab-X is based on the [Apache Netbeans Platform](https://netbeans.apache.or
 
 Each distinct feature in a Netbeans Platform application can be provided by a distinct Netbeans module, which is comparable to a plugin. A Netbeans module is a group of Java classes that provides an application with a specific feature. Most of the directories you see in the [JJazzLab-X root directory on GitHub](https://github.com/jjazzboss/JJazzLab-X) are the JJazzLab-X modules.
 
-So unless you want to fix the JJazzLab-X code itself, you will probably start by creating your own Netbeans module. We'll show below how to plug your new feature in the application, e.g. how to make a new action appear in a give menu, or how to make your new rhythm engine appear in the rhythm selection dialog.
+So unless you want to fix the JJazzLab-X code itself, you will probably start by creating your own Netbeans module. 
 
 ## Create your Netbeans module
 
@@ -48,7 +48,7 @@ The Quantizer module has only a single API package, which is made public to othe
 
 ![](.gitbook/assets/2021-05-30-20_18_34-window.png)
 
-## Create the action class
+## Create an action
 
 We want to create a "Reharmonize" action which should be callable from the chord symbol popup menu, and should operate on the user-selected chord symbols. 
 
@@ -78,7 +78,7 @@ Roll the mouse over the light bulb on the left margin, and click on the popup **
 
 Repeat the same operation until all dependencies are fixed. 
 
-## Action annotations
+### Action annotations
 
 Now you should have only one error in the file:
 
@@ -107,7 +107,7 @@ Run JJazzLab-X, then in a song select a chord symbol and show the popup menu: ou
 Consult the [Netbeans platform online doc](https://netbeans.apache.org/kb/docs/platform/) for more information about the Netbeans platform API.
 {% endhint %}
 
-## Action code
+### Action code
 
 The 2 most important methods are:
 
@@ -169,10 +169,6 @@ Below is a sketch of a possible Reharmonize action implementation.
                
     }
 ```
-
-## Create your rhythm engine
-
-You need first to create your own Netbeans module, following the instructions [above](building.md#create-your-netbeans-module).  
 
 
 

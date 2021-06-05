@@ -23,15 +23,21 @@ The main APIs you'll be using are found in the `Rhythm` and `RhythmMusicGenerati
 
   The parameters to modulate the rhythm, e.g. "Complexity" or "Fill"
 
+## Create your code
+
+You should first create your own Netbeans module, as explained in the [Getting started](building.md#create-your-netbeans-module) page.
+
+Your engine must be recognized by the JJazzLab-X framework, so that it can be accessible to the end-user. For this you'll need to start by adding a `RhythmProvider` implementation, as explained below. 
+
 ## Main interfaces
 
 ### `RhythmProvider` 
 
-Basically you need to create your own module which provides an implementation of the `RhythmProvider` interface defined in the Rhythm module.
+The `RhythmProvider` interface defined in the [Rhythm ](https://github.com/jjazzboss/JJazzLab-X/tree/master/Rhythm/src/org/jjazz/rhythm)module.
 
 Your implementation must use the `@ServiceProvider` annotation so that the `RhythmDatabase` instance can automatically find it upon startup. The general Netbeans mechanism used is described [here](http://wiki.netbeans.org/DevFaqLookupDefault).
 
-When user needs to pick up a rhythm, the rhythm selection dialog shows the available `RhythmProvider` instances \(e.g. "Yamaha style based generator"\) and their list of rhythms \(e.g. "jazz", "pop", ...\).
+When user needs to pick up a rhythm, the rhythm selection dialog asks the `RhythmDatabase` to provide the available `RhythmProvider` instances \(e.g. "Yamaha style based generator"\) and their list of rhythms \(e.g. "jazz", "pop", ...\).
 
 The `RhythmProvider` implementation is responsible to provide:
 
