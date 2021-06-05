@@ -33,7 +33,7 @@ Your engine must be recognized by the JJazzLab-X framework, so that it can be ac
 
 ### `RhythmProvider` 
 
-The `RhythmProvider` interface defined in the [Rhythm ](https://github.com/jjazzboss/JJazzLab-X/tree/master/Rhythm/src/org/jjazz/rhythm)module.
+The `RhythmProvider` interface is defined in the [Rhythm ](https://github.com/jjazzboss/JJazzLab-X/tree/master/Rhythm/src/org/jjazz/rhythm)module.
 
 Your implementation must use the `@ServiceProvider` annotation so that the `RhythmDatabase` instance can automatically find it upon startup. The general Netbeans mechanism used is described [here](http://wiki.netbeans.org/DevFaqLookupDefault).
 
