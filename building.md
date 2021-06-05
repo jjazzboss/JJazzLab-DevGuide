@@ -170,6 +170,10 @@ Below is a sketch of a possible Reharmonize action implementation.
     }
 ```
 
+## Create your rhythm engine
+
+You need first to create your own Netbeans module, following the instructions [above](building.md#create-your-netbeans-module).  
+
 
 
 
