@@ -12,7 +12,7 @@ This is the development environment and platform on which JJazzLab-X is built.
 
 ### Retrieve the JJazzLab-X code source project from GitHub
 
-1. Menu **Team/Git/Clone**
+1. Netbeans IDE menu **Team/Git/Clone**
 2. Enter repository address **https://github.com/jjazzboss/JJazzLab-X.git** 
 3. Leave user and password blank
 4. Press **Next** and select the **master** branch
