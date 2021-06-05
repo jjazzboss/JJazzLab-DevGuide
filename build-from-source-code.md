@@ -15,7 +15,7 @@ This is the development environment and platform on which JJazzLab-X is built.
 1. Netbeans IDE menu **Team/Git/Clone**
 2. Enter repository address **https://github.com/jjazzboss/JJazzLab-X.git** 
 3. Leave user and password blank
-4. Press **Next** and select the **master** branch
+4. Press **Next** and select the **master** branch \(or another branch, if you know what you're doing\)
 5. Let Netbeans open the **JJazzLab-X** project from the cloned files
 
 ### Build the JJazzLab-X application
