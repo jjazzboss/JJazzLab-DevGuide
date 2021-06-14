@@ -52,7 +52,7 @@ The Quantizer module has only a single API package, which is made public to othe
 
 We want to create a "Reharmonize" action which should be callable from the chord symbol popup menu, and should operate on the user-selected chord symbols. 
 
-The best way is to look for a similar action and copy the code. Actions classes are mainly found in the following modules:
+The best way to start is to look for a similar action and copy the code. Actions classes are mainly found in the following modules:
 
 * [CL\_Editor ****](https://github.com/jjazzboss/JJazzLab-X/tree/master/CL_Editor/src/org/jjazz/ui/cl_editor)module : Chord Leadsheet editor actions such as insert bar, transpose chord symbols, etc.
 * [SS\_Editor ](https://github.com/jjazzboss/JJazzLab-X/tree/master/SS_Editor/src/org/jjazz/ui/ss_editor)module : Song Structure editor actions such as delete song part, change rhythm, etc.
@@ -60,7 +60,7 @@ The best way is to look for a similar action and copy the code. Actions classes 
 * [MusicControlActions ](https://github.com/jjazzboss/JJazzLab-X/tree/master/MusicControlActions/src/org/jjazz/ui/musiccontrolactions)module: play, stop, etc. 
 * [SongEditorManager ](https://github.com/jjazzboss/JJazzLab-X/tree/master/SongEditorManager/src/org/jjazz/songeditormanager)module: new song, open song, duplicate song, etc.
 
-The chord leadsheet editor [**TransposeDown** ](https://github.com/jjazzboss/JJazzLab-X/blob/master/CL_Editor/src/org/jjazz/ui/cl_editor/actions/TransposeDown.java)action is enabled when user has selected one or more chord symbols, so this could be our code basis. Let's refactor-copy the java file in our module :
+The chord leadsheet editor action [TransposeDown ****](https://github.com/jjazzboss/JJazzLab-X/blob/master/CL_Editor/src/org/jjazz/ui/cl_editor/actions/TransposeDown.java)is enabled when user has selected one or more chord symbols, so this could be our code basis. Let's refactor-copy the java file in our module :
 
 In the Netbeans IDE:
 
@@ -114,7 +114,7 @@ The 2 most important methods are:
 * **selectionChange**\(\), which is called each time selection has changed \(e.g. user has selected or unselected bars/chord symbols/sections\) with a selection context parameter. This is used to enable or disable the action depending on the selection.
 * **actionPerformed\(\)**, which performs the action. 
 
-The automatic selection change mechanism is provided by the **CL\_ContextActionSupport** helper class.  This mechanism is based on the powerful **Netbeans global Lookup** mechanism, which is a out of scope of this simple tutorial -but you will easily find explanations on the web. 
+The automatic selection change mechanism in the active Chord leadsheet editor is provided by the **CL\_ContextActionSupport** helper class.  This mechanism is based on the powerful **Netbeans global Lookup** mechanism, which is a out of scope of this simple tutorial -but you will easily find explanations on the web. 
 
 Below is a sketch of a possible Reharmonize action implementation.
 
