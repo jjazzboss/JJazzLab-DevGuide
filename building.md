@@ -151,14 +151,14 @@ Below is a sketch of a possible Reharmonize action implementation.
             // Remove existing chord symbols
             for (CLI_ChordSymbol cliCs : selection.getSelectedChordSymbols())
             {
-                cls.removeItem(cliCs); // Generate an undoable edit
+                cls.removeItem(cliCs); // Generate one or more undoable edits
             }
 
             
             // Replace with the new chord symbols
             for (CLI_ChordSymbol cliCs : newChordSymbols)
             {
-                cls.addItem(cliCs);    // Generate an undoable edit
+                cls.addItem(cliCs);    // Generate one or more undoable edits
             }
 
 
