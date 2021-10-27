@@ -1,6 +1,6 @@
 # Data model
 
-## `Song` 
+## `Song`&#x20;
 
 The [Song](https://github.com/jjazzboss/JJazzLab-X/blob/master/Song/src/org/jjazz/song/api/Song.java) object is the main data model. It is mainly composed of a [ChordLeadSheet](https://github.com/jjazzboss/JJazzLab-X/blob/master/ChordLeadSheet/src/org/jjazz/leadsheet/chordleadsheet/api/ChordLeadSheet.java) and a [SongStructure](https://github.com/jjazzboss/JJazzLab-X/blob/master/SongStructure/src/org/jjazz/songstructure/api/SongStructure.java).
 
@@ -10,9 +10,9 @@ The `SongStructure` object is the model of the Song structure editor. It holds t
 
 Combining the `SongStructure` and the `ChordLeadSheet` will give you the "unrolled" chord lead sheet for which the backing track must be generated.
 
-## `MidiMix` 
+## `MidiMix`&#x20;
 
-The [MidiMix](https://github.com/jjazzboss/JJazzLab-X/blob/master/MidiMix/src/org/jjazz/midimix/MidiMix.java) stores the Midi configuration of a given `Song`. It is mainly used by the framework to control the Midi output device. Your `MusicGenerator` will use it only to retrieve the Midi channel associated to a `Rhythm` track \(`RhythmVoice`\).
+The [MidiMix](https://github.com/jjazzboss/JJazzLab-X/blob/master/MidiMix/src/org/jjazz/midimix/MidiMix.java) stores the Midi configuration of a given `Song`. It is mainly used by the framework to control the Midi output device. Your `MusicGenerator` will use it only to retrieve the Midi channel associated to a `Rhythm` track (`RhythmVoice`).
 
 ## Helper classes
 
@@ -20,13 +20,12 @@ The [MidiMix](https://github.com/jjazzboss/JJazzLab-X/blob/master/MidiMix/src/or
 
 Supporting classes used in the `Song`: [TimeSignature](https://github.com/jjazzboss/JJazzLab-X/blob/master/Harmony/src/org/jjazz/harmony/TimeSignature.java), [ChordSymbol](https://github.com/jjazzboss/JJazzLab-X/blob/master/Harmony/src/org/jjazz/harmony/ChordSymbol.java), [Degree](https://github.com/jjazzboss/JJazzLab-X/blob/master/Harmony/src/org/jjazz/harmony/Degree.java), etc.
 
-### RhythmMusicGeneration module
+### Phrases and RhythmMusicGeneration modules
 
 Supporting classes useful for your `MusicGenerator`:
 
 * [Phrase](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/Phrase.java) and [NoteEvent](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/NoteEvent.java): the `MusicGenerator` needs to create a `Phrase` for each rhythm track.
 * [ContextChordSequence](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/ContextChordSequence.java): a helper class to get the "unrolled" chord leadsheet descrive above.
 * [Grid](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/Grid.java): music phrase manipulation methods
-* [Phrases](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/Phrases.java): music phrase manipulation methods, including methods to adapt a music source phrase \(e.g. a bass pattern for C7M\) into a different chord \(e.g. Ab-6\)
+* [Phrases](https://github.com/jjazzboss/JJazzLab-X/blob/master/RhythmMusicGeneration/src/org/jjazz/rhythmmusicgeneration/Phrases.java): music phrase manipulation methods, including methods to adapt a music source phrase (e.g. a bass pattern for C7M) into a different chord (e.g. Ab-6)
 * etc.
-
