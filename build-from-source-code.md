@@ -1,46 +1,48 @@
-# Build from source code
+# Build JJazzLab 5 from source code
 
-### Make sure you have Java OpenJDK 11 installed
+Requirements:
 
-If not, install the latest version from [adoptopenjdk.net](https://adoptopenjdk.net).
+* **jdk-23** or higher
+* **maven 3** or higher
+* **git** if you want to clone the repository (it can be downloaded as a ZIP file from github too).
 
-### Download and install Netbeans IDE 12.3 (or later) from [Apache Netbeans](https://netbeans.apache.org) website
+## Preparation
 
-This is the development environment and platform on which JJazzLab-X is built.
+These steps are required for building JJazzlab, both from the command line or from Netbeans:
 
-### Start Netbeans IDE
+* Clone the repository from [https://github.com/jjazzboss/JJazzLab](https://github.com/jjazzboss/JJazzLab) (or download and extract the source files)
+* There is a file too big for git, you have to download it from [https://archive.org/download/jjazz-lab-sound-font/JJazzLab-SoundFont.sf2](https://archive.org/download/jjazz-lab-sound-font/JJazzLab-SoundFont.sf2) and move it to `plugins/FluidSynthEmbeddedSynth/src/main/soundfont`
 
-### Retrieve the JJazzLab-X code source project from GitHub
+### In Linux & MacOS, install _fluidsynth_ package
 
-1. Netbeans IDE menu **Team/Git/Clone**
-2. Enter repository address **https://github.com/jjazzboss/JJazzLab-X.git **
-3. Leave user and password blank
-4. Press **Next **and select the **master **branch (or another branch, if you know what you're doing)
-5. Let Netbeans open the **JJazzLab-X** project from the cloned files
+On both Linux and MacOS, you also need the native `fluidsynth` package. Check if it is installed with `fluidsynth --version` . If it's not yet there, install it with:
 
-### Build the JJazzLab-X application
+* `sudo apt-get install fluidsynth`  on Debian based distributions,
+* `brew install fluidsynth` for Homebrew users on MacOS,
+* for other Linux distributions and other MacOS installation options see [https://github.com/FluidSynth/fluidsynth/wiki/Download](https://github.com/FluidSynth/fluidsynth/wiki/Download)
 
-1. Select the **JJazzLab-X** project, right-click **Build**. \
-   When it's done you should see "BUILD SUCCESSFUL" in the **Output **window.
+## Build from the command line
 
-### Run JJazzLab-X
+With the preparation done, you only need to execute the build and run the application:
 
-1. Select the **JJazzLab-X** project, right-click **Run**.
+* In the project root, run `mvn clean install`
+* Go to app/application and run `mvn nbm:cluster-app nbm:run-platform`&#x20;
 
-JJazzLab-X should start with the default language set up for your computer, e.g. if you use Windows in the German language, you should see JJazzLab in German. If a source phrase is not translated in the target language, the English one is used.
+The application should open up, the output of the application will be visible in the terminal that launched the app.
 
-{% hint style="danger" %}
-* The application will have no branding and no rhythms, this is normal, those come with the JJazzLab distribution
-* The main menu bar (File, Edit, Tools, Window, Help, Check for updates) and a few window popup-menus will remain in English, this is also normal
-{% endhint %}
+## Build from Netbeas IDE
 
-### Force JJazzLab-X to run with a different language
+Because JJazzlab uses Apache Netbeans Platform, Netbeans IDE is preferred for development. Follow these steps to build and run the application:
 
-You can't switch the language from within the JJazzLab-X application when it is run from Netbeans IDE. But it's still possible to change language for test purposes:
+* Go to `File` menu, `Open project`  and point to the folder with JJazzlab source code
+* You will see a project named `JJazzLab parent [master]` , right click it and select `build`&#x20;
+* Expand `JJazzLab parent / modules`  using the `>` symbol on the left, and locate the module called `JJazzLab App`&#x20;
+* Open that module by either double clicking on it or using right click and `Open Project`&#x20;
+* Scroll up on the projects panel and locate `JJazzLab App [master]`&#x20;
+* Right click the project name and use `Run`&#x20;
 
-1. In Netbeans, **Projects **tab, open the **JJazzLab-X** project, then the **Important Files** folder
-2. Open **Project Properties**
-3. Find "**run.args.extra=...**" and insert "**--locale xx:XX **" right after the "="\
-   For example: "**run.args.extra=--locale fr:FR \\**"
+The application should open up, the output of the application will be visible in the output panel in the IDE.
 
-Use fr:FR for French, de:DE for German, en:US for English, it:IT for Italian, es:ES for Spanish, ja:JP for Japanese, zh:CN for Chinese (mandarin).
+## Troubleshooting
+
+If the instructions don't work as expected, consider creating an issue in [github JJazzLab repository](https://github.com/jjazzboss/JJazzLab/issues) or asking in [jjazzlab forums](https://jjazzlab.freeforums.net/).

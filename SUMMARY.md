@@ -1,13 +1,8 @@
 # Table of contents
 
-* [JJazzLab-X](README.md)
-* [Build from source code](build-from-source-code.md)
-* [Getting started](building.md)
-* [Add a rhythm engine](add-rhythm-engine.md)
-
-## API
-
-* [Main modules](api/main-modules.md)
-* [Data model](api/data-model.md)
-* [Javadoc API](https://www.jjazzlab.com/javadoc/index.html)
-
+* [Developping with JJazzLab](README.md)
+* [Build JJazzLab 5 from source code](build-from-source-code.md)
+* [Architecture](add-rhythm-engine.md)
+* [Music generation](music-generation.md)
+* [Tutorial (needs to be updated for 5.1)](building.md)
+* [Javadoc API](https://www.jjazzlab.com/javadoc/app/index.html)

@@ -1,33 +1,43 @@
-# JJazzLab
+---
+description: An open application for developers
+---
 
-JJazzLab is a Midi-based application dedicated to backing tracks generation.&#x20;
-
-The ultimate objective is to develop a jam buddy able to quickly generate intelligent and interesting backing tracks: realistic and non-boring backing tracks which you can easily adjust to specific songs.
-
-## Architecture
-
-![](.gitbook/assets/JJazzLab-X-architecture.jpg)
+# Developping with JJazzLab
 
 {% hint style="info" %}
-JJazzLab has a rather well-commented source code: don't hesitate to browse the [GitHub repository](https://github.com/jjazzboss/JJazzLab-X) or the [Javadoc API](https://www.jjazzlab.com/javadoc/index.html).
+JJazzLab is written in Java. Why ?
+
+This choice reflects the project’s origins (started over 10 years ago, when Java was a common option for cross-platform desktop apps) and the nature of the problem: unlike a low-latency audio DAW, JJazzLab does not require hard real-time deadline management in the music generation engine. As a side note, modern Java is quite different from early versions and can deliver excellent performance.
 {% endhint %}
 
-## Develop your own rhythm generation engine without hassle
+## Updating the application
 
-Thanks to JJazzLab developers can save a huge amount of work by only focusing on their music generation engine. Out of the box, the JJazzLab-X framework provides all the infrastructure, all the “plumbing” that, before, every developer had to write themselves.
+#### Apache NetBeans Platform
 
-JJazzLab can host any number of [music generation engines](add-rhythm-engine.md) as plugins. What happens when you load a song file and press the Play button?
+JJazzLab is based on the [Apache Netbeans Platform](https://netbeans.apache.org/tutorial/main/kb/docs/platform/) which provides a reliable and extensible architecture for cross-platform desktop applications.&#x20;
 
-1. The framework shows the song in the editors
-2. The framework sends Midi messages to initialize the connected Midi sound device
-3. When user press Play, the framework sends the song data to the music generation engine
-4. The music engine uses the song data to generate the Midi data for the backing tracks
-5. The framework retrieves the Midi data and plays it
+The NetBeans Platform manages the application lifecycle, window system, extension points, options, actions, and more.&#x20;
 
-## Easily add new features
+It uses NetBeans modules (different from java 9 JPMS modules) which group related Java classes into pluggable components, while managing visibility and dependencies between them.
 
-JJazzLab is based on the [Apache Netbeans Platform](https://netbeans.apache.org). It provides a reliable and extensible application architecture.
+#### Adding new features
 
-The Netbeans Platform turns JJazzLab into a pluggable application where plugins can be installed or deactivated at runtime. Plugins can easily add or alter features and the related UI elements such as menu items.
+Suppose you have a reharmonization algorithm that proposes alternate chord progressions (e.g., replacing `| A7 | Dmaj7 |` with `| Em7 A7 | Dmaj7 |`).
 
-For example suppose that you work on reharmonization algorithms (e.g. replace | A7 | D7M | by | Em7 A7 | D7M). It's easy to add a feature which propose possible reharmonizations when user selects multiple chord symbols. You'll just create a new action class which implements the algorithm on the current chord symbols selection, and "connect" (via annotations, no code required) this action to a new menu item in the Chord Symbol popup menu, as explained in the [Getting started page](building.md).
+You can easily implement an action that, when user selects chords, suggests these alternatives in the existing chord popup menu.&#x20;
+
+Then your code can be bundled in a module which is deployed like a plugin.&#x20;
+
+#### Develop your own rhythm generation engine without hassle
+
+Out of the box, JJazzLab provides the infrastructure (“plumbing”) that developers would otherwise need to build themselves: data management, user interface, MIDI management, playback control, music-generation control, etc.
+
+In JJazzLab, the rhythm generation engine just receives a context (chords, song structure, tempo, etc.) and returns musical phrases (one per instrument) that form the backing track, ready for playback.&#x20;
+
+The engine doesn’t have to manage real-time deadline: JJazzLab handles scheduling and synchronization.
+
+## JJazzLab Toolkit
+
+The [JJazzLab Toolkit](https://github.com/jjazzboss/JJazzLabToolkit) is a standalone jar file which contains the JJazzLab core features, the JJazzLab plugins and the required dependencies.&#x20;
+
+Use the toolkit to use JJazzLab features independently of the JJazzLab application.
